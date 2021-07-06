@@ -1,5 +1,7 @@
-from tokenize import Tokenize 
+from tokenize import Tokenizer 
+from parser import Parser
 
-token = Tokenize('main.jack')
-while(token.hasMoreTokens()):
-    token.advance()
+#token0 = Tokenizer('main.jack')
+token = Parser('main1.jack')
+token.compile()
+
