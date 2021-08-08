@@ -152,13 +152,13 @@ class Parser:
     #Compiles a (possibly empty) parameter list, not including the enclosing "()" .
     def compileParameterList(self):
         #self.writeStatement("compileParameterList", 1)
-        self.tokenizer.write(1, "compileParameterList")
-
+       
         if(self.tokenizer.getToken() == ")"):
             print("retornou no parameterList")
             return
 
         self.tokenizer.advance()  # type
+        self.tokenizer.write(1, "compileParameterList")
         self.tokenizer.write()
 
         if(self.tokenizer.tokenType() != self.tokenizer.IDENTIFIER):
@@ -185,7 +185,7 @@ class Parser:
     #Compiles a var declaration.
     def compileVarDec(self):
         #self.writeStatement("compileVarDec", 1)
-        self.tokenizer.write(1, "compileVarDec")
+        self.tokenizer.write(1, "classVarDec")
 
         self.tokenizer.advance()  #var
         self.tokenizer.write()
@@ -211,12 +211,16 @@ class Parser:
         self.tokenizer.advance()  #
         self.tokenizer.write()
         #self.writeStatement("compileVarDec", 0)
-        self.tokenizer.write(2, "compileVarDec")
+        self.tokenizer.write(2, "classVarDec")
     
     #Compiles a sequence of statements, not including the enclosing ‘‘{}’’.
     def compileStatements(self):
         #self.writeStatement("compileStatements", 1)
-        self.tokenizer.write(1, "compileStatements")
+        #self.tokenizer.write(1, "compileStatements")
+        flag = 0
+        if (self.tokenizer.getToken() in ["return", "let", "do", "if", "while"]):
+             self.tokenizer.write(1, "compileStatements")
+             flag = 1
 
         while self.tokenizer.getToken() in ["return", "let", "do", "if", "while"]:
             if(self.tokenizer.getToken() == "if"):
@@ -229,8 +233,10 @@ class Parser:
                 self.compileDo()
             elif (self.tokenizer.getToken() == "return"):
                 self.compileReturn()
+
         #self.writeStatement("compileStatements", 0)
-        self.tokenizer.write(2, "compileStatements")
+        if (flag == 1):
+            self.tokenizer.write(2, "compileStatements")
 
     #Compiles an if statement, possibly with a trailing else clause.
     def compileIf(self):
