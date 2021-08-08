@@ -1,32 +1,44 @@
 <class>
   <keyword>class</keyword>
-  <identifier>SquareGame</identifier>
+  <identifier>Square</identifier>
   <symbol>{</symbol>
   <keyword>field</keyword>
 <varStatement>
-  <identifier>Square</identifier>
-  <identifier>square</identifier>
+  <keyword>int</keyword>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
   <symbol>;</symbol>
   <keyword>field</keyword>
 </varStatement>
 <varStatement>
   <keyword>int</keyword>
-  <identifier>direction</identifier>
+  <identifier>size</identifier>
   <symbol>;</symbol>
   <keyword>constructor</keyword>
 </varStatement>
 <compileSubroutineDec>
-  <identifier>SquareGame</identifier>
+  <identifier>Square</identifier>
   <identifier>new</identifier>
   <symbol>(</symbol>
+  <keyword>int</keyword>
+<compileParameterList>
+  <identifier>Ax</identifier>
+  <symbol>,</symbol>
+  <keyword>int</keyword>
+  <identifier>Ay</identifier>
+  <symbol>,</symbol>
+  <keyword>int</keyword>
+  <identifier>Asize</identifier>
   <symbol>)</symbol>
+</compileParameterList>
   <symbol>{</symbol>
   <keyword>let</keyword>
 <compileStatements>
 <letStatement>
-  <identifier>square</identifier>
+  <identifier>x</identifier>
   <symbol>=</symbol>
-  <identifier>square</identifier>
+  <identifier>Ax</identifier>
 <expression>
 <compileTerm>
   <symbol>;</symbol>
@@ -35,28 +47,40 @@
   <keyword>let</keyword>
 </letStatement>
 <letStatement>
-  <identifier>direction</identifier>
+  <identifier>y</identifier>
   <symbol>=</symbol>
-  <identifier>direction</identifier>
+  <identifier>Ay</identifier>
 <expression>
 <compileTerm>
   <symbol>;</symbol>
 </compileTerm>
 </expression>
-  <identifier>return</identifier>
+  <keyword>let</keyword>
 </letStatement>
-<returnStatement>
-  <identifier>square</identifier>
+<letStatement>
+  <identifier>size</identifier>
+  <symbol>=</symbol>
+  <identifier>Asize</identifier>
 <expression>
 <compileTerm>
   <symbol>;</symbol>
 </compileTerm>
 </expression>
-  <symbol>}</symbol>
-</returnStatement>
+  <keyword>do</keyword>
+</letStatement>
+<doStatement>
+  <identifier>draw</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+</doStatement>
 </compileStatements>
-  <keyword>method</keyword>
+  <symbol>;</symbol>
 </compileSubroutineDec>
+  <identifier>return</identifier>
+  <identifier>x</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
 <compileSubroutineDec>
   <keyword>void</keyword>
   <identifier>dispose</identifier>
@@ -66,209 +90,97 @@
   <keyword>do</keyword>
 <compileStatements>
 <doStatement>
-  <identifier>square</identifier>
-  <symbol>.</symbol>
-  <identifier>dispose</identifier>
-</doStatement>
-</compileStatements>
-  <symbol>(</symbol>
-</compileSubroutineDec>
-  <symbol>)</symbol>
-  <symbol>;</symbol>
-  <keyword>do</keyword>
   <identifier>Memory</identifier>
   <symbol>.</symbol>
   <identifier>deAlloc</identifier>
-  <symbol>(</symbol>
-  <identifier>square</identifier>
-  <symbol>)</symbol>
-  <symbol>;</symbol>
-  <identifier>return</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>method</keyword>
-<compileSubroutineDec>
-  <keyword>void</keyword>
-  <identifier>run</identifier>
-  <symbol>(</symbol>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>var</keyword>
-<classVarDec>
-  <keyword>char</keyword>
-  <identifier>key</identifier>
-  <symbol>;</symbol>
-  <keyword>var</keyword>
-</classVarDec>
-<classVarDec>
-  <keyword>boolean</keyword>
-  <identifier>exit</identifier>
-  <symbol>;</symbol>
-  <keyword>let</keyword>
-</classVarDec>
-<compileStatements>
-<letStatement>
-  <identifier>exit</identifier>
-  <symbol>=</symbol>
-  <identifier>key</identifier>
-<expression>
-<compileTerm>
-  <symbol>;</symbol>
-</compileTerm>
-</expression>
-  <keyword>while</keyword>
-</letStatement>
-<whileStatement>
-  <symbol>(</symbol>
-  <identifier>exit</identifier>
-<expression>
-<compileTerm>
-  <symbol>)</symbol>
-</compileTerm>
-</expression>
-  <symbol>{</symbol>
-  <keyword>while</keyword>
-<compileStatements>
-<whileStatement>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-<expression>
-<compileTerm>
-  <symbol>)</symbol>
-</compileTerm>
-</expression>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-<compileStatements>
-<letStatement>
-  <identifier>key</identifier>
-  <symbol>=</symbol>
-  <identifier>key</identifier>
-<expression>
-<compileTerm>
-  <symbol>;</symbol>
-</compileTerm>
-</expression>
-  <keyword>do</keyword>
-</letStatement>
-<doStatement>
-  <identifier>moveSquare</identifier>
-  <symbol>(</symbol>
-  <symbol>)</symbol>
 </doStatement>
 </compileStatements>
-  <symbol>;</symbol>
-</whileStatement>
-</compileStatements>
-  <symbol>}</symbol>
-</whileStatement>
-</compileStatements>
-  <keyword>if</keyword>
+  <symbol>(</symbol>
 </compileSubroutineDec>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>exit</identifier>
-  <symbol>=</symbol>
-  <identifier>exit</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>do</keyword>
-  <identifier>square</identifier>
-  <symbol>.</symbol>
-  <identifier>decSize</identifier>
-  <symbol>(</symbol>
+  <identifier>x</identifier>
   <symbol>)</symbol>
   <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>do</keyword>
-  <identifier>square</identifier>
-  <symbol>.</symbol>
-  <identifier>incSize</identifier>
-  <symbol>(</symbol>
-  <symbol>)</symbol>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>direction</identifier>
-  <symbol>=</symbol>
-  <identifier>exit</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>direction</identifier>
-  <symbol>=</symbol>
-  <identifier>key</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>direction</identifier>
-  <symbol>=</symbol>
-  <identifier>square</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>direction</identifier>
-  <symbol>=</symbol>
-  <identifier>direction</identifier>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>while</keyword>
-  <symbol>(</symbol>
-  <identifier>key</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>let</keyword>
-  <identifier>key</identifier>
-  <symbol>=</symbol>
-  <identifier>key</identifier>
-  <symbol>;</symbol>
-  <keyword>do</keyword>
-  <identifier>moveSquare</identifier>
-  <symbol>(</symbol>
-  <symbol>)</symbol>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <symbol>}</symbol>
   <identifier>return</identifier>
   <symbol>;</symbol>
   <symbol>}</symbol>
   <keyword>method</keyword>
 <compileSubroutineDec>
   <keyword>void</keyword>
-  <identifier>moveSquare</identifier>
+  <identifier>draw</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>{</symbol>
+  <keyword>do</keyword>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+</doStatement>
+</compileStatements>
+  <symbol>(</symbol>
+</compileSubroutineDec>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
+  <identifier>erase</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>{</symbol>
+  <keyword>do</keyword>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+</doStatement>
+</compileStatements>
+  <symbol>(</symbol>
+</compileSubroutineDec>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
+  <identifier>incSize</identifier>
   <symbol>(</symbol>
   <symbol>)</symbol>
   <symbol>{</symbol>
@@ -276,7 +188,7 @@
 <compileStatements>
 <ifStatement>
   <symbol>(</symbol>
-  <identifier>direction</identifier>
+  <identifier>x</identifier>
 <expression>
 <compileTerm>
   <symbol>)</symbol>
@@ -286,65 +198,382 @@
   <keyword>do</keyword>
 <compileStatements>
 <doStatement>
-  <identifier>square</identifier>
-  <symbol>.</symbol>
+  <identifier>erase</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+</doStatement>
+</compileStatements>
+  <symbol>;</symbol>
+</ifStatement>
+</compileStatements>
+  <keyword>let</keyword>
+</compileSubroutineDec>
+  <identifier>size</identifier>
+  <symbol>=</symbol>
+  <identifier>size</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>draw</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
+  <identifier>decSize</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>{</symbol>
+  <keyword>if</keyword>
+<compileStatements>
+<ifStatement>
+  <symbol>(</symbol>
+  <identifier>size</identifier>
+<expression>
+<compileTerm>
+  <symbol>)</symbol>
+</compileTerm>
+</expression>
+  <symbol>{</symbol>
+  <keyword>do</keyword>
+<compileStatements>
+<doStatement>
+  <identifier>erase</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+</doStatement>
+</compileStatements>
+  <symbol>;</symbol>
+</ifStatement>
+</compileStatements>
+  <keyword>let</keyword>
+</compileSubroutineDec>
+  <identifier>size</identifier>
+  <symbol>=</symbol>
+  <identifier>size</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>draw</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
   <identifier>moveUp</identifier>
+  <symbol>(</symbol>
+  <symbol>)</symbol>
+  <symbol>{</symbol>
+  <keyword>if</keyword>
+<compileStatements>
+<ifStatement>
+  <symbol>(</symbol>
+  <identifier>y</identifier>
+<expression>
+<compileTerm>
+  <symbol>)</symbol>
+</compileTerm>
+</expression>
+  <symbol>{</symbol>
+  <keyword>do</keyword>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
 </doStatement>
 </compileStatements>
   <symbol>(</symbol>
 </ifStatement>
 </compileStatements>
-  <symbol>)</symbol>
+  <identifier>x</identifier>
 </compileSubroutineDec>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>let</keyword>
+  <identifier>y</identifier>
+  <symbol>=</symbol>
+  <identifier>y</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
   <symbol>;</symbol>
   <symbol>}</symbol>
-  <keyword>if</keyword>
-  <symbol>(</symbol>
-  <identifier>direction</identifier>
-  <symbol>)</symbol>
-  <symbol>{</symbol>
-  <keyword>do</keyword>
-  <identifier>square</identifier>
-  <symbol>.</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
   <identifier>moveDown</identifier>
   <symbol>(</symbol>
   <symbol>)</symbol>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
+  <symbol>{</symbol>
   <keyword>if</keyword>
+<compileStatements>
+<ifStatement>
   <symbol>(</symbol>
-  <identifier>direction</identifier>
+  <identifier>y</identifier>
+<expression>
+<compileTerm>
   <symbol>)</symbol>
+</compileTerm>
+</expression>
   <symbol>{</symbol>
   <keyword>do</keyword>
-  <identifier>square</identifier>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
   <symbol>.</symbol>
+  <identifier>setColor</identifier>
+</doStatement>
+</compileStatements>
+  <symbol>(</symbol>
+</ifStatement>
+</compileStatements>
+  <identifier>x</identifier>
+</compileSubroutineDec>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>let</keyword>
+  <identifier>y</identifier>
+  <symbol>=</symbol>
+  <identifier>y</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
   <identifier>moveLeft</identifier>
   <symbol>(</symbol>
   <symbol>)</symbol>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
+  <symbol>{</symbol>
   <keyword>if</keyword>
+<compileStatements>
+<ifStatement>
   <symbol>(</symbol>
-  <identifier>direction</identifier>
+  <identifier>x</identifier>
+<expression>
+<compileTerm>
   <symbol>)</symbol>
+</compileTerm>
+</expression>
   <symbol>{</symbol>
   <keyword>do</keyword>
-  <identifier>square</identifier>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
   <symbol>.</symbol>
+  <identifier>setColor</identifier>
+</doStatement>
+</compileStatements>
+  <symbol>(</symbol>
+</ifStatement>
+</compileStatements>
+  <identifier>x</identifier>
+</compileSubroutineDec>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>let</keyword>
+  <identifier>x</identifier>
+  <symbol>=</symbol>
+  <identifier>x</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <identifier>return</identifier>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
+  <keyword>method</keyword>
+<compileSubroutineDec>
+  <keyword>void</keyword>
   <identifier>moveRight</identifier>
   <symbol>(</symbol>
   <symbol>)</symbol>
-  <symbol>;</symbol>
-  <symbol>}</symbol>
-  <keyword>do</keyword>
-  <identifier>Sys</identifier>
-  <symbol>.</symbol>
-  <identifier>wait</identifier>
+  <symbol>{</symbol>
+  <keyword>if</keyword>
+<compileStatements>
+<ifStatement>
   <symbol>(</symbol>
-  <identifier>direction</identifier>
+  <identifier>x</identifier>
+<expression>
+<compileTerm>
+  <symbol>)</symbol>
+</compileTerm>
+</expression>
+  <symbol>{</symbol>
+  <keyword>do</keyword>
+<compileStatements>
+<doStatement>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+</doStatement>
+</compileStatements>
+  <symbol>(</symbol>
+</ifStatement>
+</compileStatements>
+  <identifier>x</identifier>
+</compileSubroutineDec>
   <symbol>)</symbol>
   <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>let</keyword>
+  <identifier>x</identifier>
+  <symbol>=</symbol>
+  <identifier>x</identifier>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>setColor</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <keyword>do</keyword>
+  <identifier>Screen</identifier>
+  <symbol>.</symbol>
+  <identifier>drawRectangle</identifier>
+  <symbol>(</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>,</symbol>
+  <identifier>x</identifier>
+  <symbol>,</symbol>
+  <identifier>y</identifier>
+  <symbol>)</symbol>
+  <symbol>;</symbol>
+  <symbol>}</symbol>
   <identifier>return</identifier>
   <symbol>;</symbol>
   <symbol>}</symbol>

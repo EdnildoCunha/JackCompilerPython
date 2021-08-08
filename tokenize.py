@@ -27,12 +27,12 @@ class Tokenizer:
         self.file = open(filePath, "r").read()
         self.tokens = self.regex.findall(self.file)
         #print("Tokens")
-        print(self.tokens)
+        #print(self.tokens)
         self.tokenIndex = 0
         self.doc = open('tokens.xml', 'w+')
 
     def hasMoreTokens(self):
-        print("has " + str(self.tokenIndex) + " " + str(len(self.tokens) - 1))
+       # print("has " + str(self.tokenIndex) + " " + str(len(self.tokens) - 1))
         return self.tokenIndex < len(self.tokens) - 1
         
 
@@ -84,7 +84,7 @@ class Tokenizer:
         if(flag == 0):
             token = self.getToken() 
             _type = self.tokenType()
-            print("wtoken", token, _type)
+            #print("wtoken", token, _type)
             self.doc.writelines("  <{}>{}</{}>\n".format(_type, token,_type))
         if(flag == 1):
             self.doc.writelines("<{}>\n".format(statement))
